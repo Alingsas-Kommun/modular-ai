@@ -1,4 +1,4 @@
-# Copyright (C) 2025 Adam Alexandersson
+# Copyright (C) 2025 Alingsås Kommun
 # This file is distributed under the GPL v3 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-27T16:04:03+00:00\n"
+"POT-Creation-Date: 2025-11-03T12:05:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: modular-ai\n"
@@ -28,7 +28,12 @@ msgstr ""
 
 #. Author of the plugin
 #: modular-ai.php
-msgid "Adam Alexandersson"
+msgid "Alingsås Kommun"
+msgstr ""
+
+#. Author URI of the plugin
+#: modular-ai.php
+msgid "https://alingsas.se"
 msgstr ""
 
 #: resources/views/components/editor-integration.php:2
@@ -220,8 +225,8 @@ msgstr ""
 msgid "Missing required parameter: %s"
 msgstr ""
 
-#: src/Api/Endpoints/ListModels.php:57
-#: src/Api/Endpoints/ListModules.php:57
+#: src/Api/Endpoints/ListModels.php:58
+#: src/Api/Endpoints/ListModules.php:58
 msgid "Valid API key required. Please provide a valid API key via X-API-Key header or api_key parameter."
 msgstr ""
 
@@ -234,26 +239,26 @@ msgid "You do not have permission to access this module"
 msgstr ""
 
 #: src/Api/Endpoints/RunModule.php:155
-#: src/Services/ModuleRunner.php:51
+#: src/Services/ModuleRunner.php:52
 msgid "Module not found"
 msgstr ""
 
-#: src/Api/Endpoints/TestModel.php:93
+#: src/Api/Endpoints/TestModel.php:94
 msgid "Model not found"
 msgstr ""
 
-#: src/Api/Endpoints/TestModel.php:102
-#: src/Http/Clients/OpenAIClient.php:113
+#: src/Api/Endpoints/TestModel.php:103
+#: src/Http/Clients/OpenAIClient.php:114
 msgid "Model name missing"
 msgstr ""
 
-#: src/Api/Endpoints/TestModel.php:110
+#: src/Api/Endpoints/TestModel.php:111
 msgid "Endpoint URL missing"
 msgstr ""
 
-#: src/Api/Endpoints/TestModel.php:118
-#: src/Http/Clients/OpenAIClient.php:42
-#: src/Http/Clients/OpenAIClient.php:109
+#: src/Api/Endpoints/TestModel.php:119
+#: src/Http/Clients/OpenAIClient.php:43
+#: src/Http/Clients/OpenAIClient.php:110
 msgid "API key missing"
 msgstr ""
 
@@ -809,40 +814,40 @@ msgstr ""
 msgid "Streaming error: %s"
 msgstr ""
 
-#: src/Http/Clients/OpenAIClient.php:38
-#: src/Http/Clients/OpenAIClient.php:105
+#: src/Http/Clients/OpenAIClient.php:39
+#: src/Http/Clients/OpenAIClient.php:106
 msgid "Endpoint missing"
 msgstr ""
 
-#: src/Http/Clients/OpenAIClient.php:46
+#: src/Http/Clients/OpenAIClient.php:47
 msgid "Model ID missing"
 msgstr ""
 
 #. Translators: This is a test message to verify the AI model is working correctly.
-#: src/Http/Clients/OpenAIClient.php:120
+#: src/Http/Clients/OpenAIClient.php:121
 #, php-format
 msgid "Please respond in %s language. This is a test to verify the AI model is working correctly."
 msgstr ""
 
-#: src/Http/Clients/OpenAIClient.php:138
+#: src/Http/Clients/OpenAIClient.php:139
 msgid "Model connection successful!"
 msgstr ""
 
-#: src/Services/ModuleRunner.php:60
+#: src/Services/ModuleRunner.php:61
 msgid "Model not found. Please ensure a model is selected for this module."
 msgstr ""
 
 #. Translators: 1: Model title
-#: src/Services/ModuleRunner.php:69
+#: src/Services/ModuleRunner.php:70
 #, php-format
 msgid "Model \"%s\" is inactive. Please activate it in the Models settings."
 msgstr ""
 
-#: src/Services/ModuleRunner.php:78
+#: src/Services/ModuleRunner.php:79
 msgid "No question or content provided"
 msgstr ""
 
-#: src/Services/ModuleRunner.php:156
+#: src/Services/ModuleRunner.php:157
 msgid "Analyze the content on this page."
 msgstr ""
 

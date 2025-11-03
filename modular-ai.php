@@ -4,8 +4,8 @@
  * Plugin URI: 
  * Description: WordPress plugin that let's you integrate AI into your wordpress website
  * Version: 1.0.0
- * Author: Adam Alexandersson
- * Author URI: 
+ * Author: Alingsås Kommun
+ * Author URI: https://alingsas.se
  * License: GPL v3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: modular-ai

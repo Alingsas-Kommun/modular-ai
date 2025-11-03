@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ModularAI 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/modular-ai\n"
 "POT-Creation-Date: 2025-10-21T13:13:29+00:00\n"
-"PO-Revision-Date: 2025-10-27 17:05+0100\n"
+"PO-Revision-Date: 2025-11-03 13:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -23,11 +23,6 @@ msgstr "Modular AI"
 msgid "WordPress plugin that let's you integrate AI into your wordpress website"
 msgstr "WordPress-plugin som låter dig integrera AI i din WordPress-webbplats"
 
-#. Author of the plugin
-#: modular-ai.php
-msgid "Adam Alexandersson"
-msgstr "Adam Alexandersson"
-
 #: src/Admin/EditorIntegration.php:31 src/Api/Endpoints/ModuleTemplate.php:89
 msgid "AI Content Analysis"
 msgstr "AI-innehållsanalys"
@@ -38,7 +33,7 @@ msgstr "AI-innehållsanalys"
 msgid "Missing required parameter: %s"
 msgstr "Obligatorisk parameter saknas: %s"
 
-#: src/Api/Endpoints/ListModels.php:57 src/Api/Endpoints/ListModules.php:57
+#: src/Api/Endpoints/ListModels.php:58 src/Api/Endpoints/ListModules.php:58
 msgid "Valid API key required. Please provide a valid API key via X-API-Key header or api_key parameter."
 msgstr "Giltig API-nyckel krävs. Ange en giltig API-nyckel via X-API-Key-header eller api_key-parameter."
 
@@ -50,20 +45,20 @@ msgstr "Modulen hittades inte eller är inte offentligt tillgänglig"
 msgid "You do not have permission to access this module"
 msgstr "Du har inte behörighet att komma åt denna modul"
 
-#: src/Api/Endpoints/TestModel.php:93
+#: src/Api/Endpoints/TestModel.php:94
 msgid "Model not found"
 msgstr "Modellen hittades inte"
 
-#: src/Api/Endpoints/TestModel.php:102 src/Http/Clients/OpenAIClient.php:113
+#: src/Api/Endpoints/TestModel.php:103 src/Http/Clients/OpenAIClient.php:114
 msgid "Model name missing"
 msgstr "Modellnamn saknas"
 
-#: src/Api/Endpoints/TestModel.php:110
+#: src/Api/Endpoints/TestModel.php:111
 msgid "Endpoint URL missing"
 msgstr "Endpoint-URL saknas"
 
-#: src/Api/Endpoints/TestModel.php:118 src/Http/Clients/OpenAIClient.php:42
-#: src/Http/Clients/OpenAIClient.php:109
+#: src/Api/Endpoints/TestModel.php:119 src/Http/Clients/OpenAIClient.php:43
+#: src/Http/Clients/OpenAIClient.php:110
 msgid "API key missing"
 msgstr "API-nyckel saknas"
 
@@ -571,43 +566,43 @@ msgstr "Strömningsfel"
 msgid "Streaming error: %s"
 msgstr "Streaming-fel: %s"
 
-#: src/Http/Clients/OpenAIClient.php:38 src/Http/Clients/OpenAIClient.php:105
+#: src/Http/Clients/OpenAIClient.php:39 src/Http/Clients/OpenAIClient.php:106
 msgid "Endpoint missing"
 msgstr "Endpoint saknas"
 
-#: src/Http/Clients/OpenAIClient.php:46
+#: src/Http/Clients/OpenAIClient.php:47
 msgid "Model ID missing"
 msgstr "Modell-ID saknas"
 
 #. Translators: This is a test message to verify the AI model is working correctly.
-#: src/Http/Clients/OpenAIClient.php:120
+#: src/Http/Clients/OpenAIClient.php:121
 #, php-format
 msgid "Please respond in %s language. This is a test to verify the AI model is working correctly."
 msgstr "Svara på %s språk. Detta är ett test för att verifiera att AI-modellen fungerar korrekt."
 
-#: src/Http/Clients/OpenAIClient.php:138
+#: src/Http/Clients/OpenAIClient.php:139
 msgid "Model connection successful!"
 msgstr "Modellanslutningen lyckades!"
 
-#: src/Api/Endpoints/RunModule.php:155 src/Services/ModuleRunner.php:51
+#: src/Api/Endpoints/RunModule.php:155 src/Services/ModuleRunner.php:52
 msgid "Module not found"
 msgstr "Modulen hittades inte"
 
-#: src/Services/ModuleRunner.php:60
+#: src/Services/ModuleRunner.php:61
 msgid "Model not found. Please ensure a model is selected for this module."
 msgstr "Modellen hittades inte. Se till att en modell är vald för denna modul."
 
 #. Translators: 1: Model title
-#: src/Services/ModuleRunner.php:69
+#: src/Services/ModuleRunner.php:70
 #, php-format
 msgid "Model \"%s\" is inactive. Please activate it in the Models settings."
 msgstr "Modellen \"%s\" är inaktiv. Aktivera den i modellinställningarna."
 
-#: src/Services/ModuleRunner.php:78
+#: src/Services/ModuleRunner.php:79
 msgid "No question or content provided"
 msgstr "Ingen fråga eller innehåll angivet"
 
-#: src/Services/ModuleRunner.php:156
+#: src/Services/ModuleRunner.php:157
 msgid "Analyze the content on this page."
 msgstr "Analysera innehållet på denna sida."
 
@@ -918,3 +913,13 @@ msgstr "Streamingfel (HTTP %1$d): %2$s"
 #, php-format
 msgid "Class %s does not exist"
 msgstr "Klass %s finns inte"
+
+#. Author of the plugin
+#: modular-ai.php
+msgid "Alingsås Kommun"
+msgstr "Alingsås Kommun"
+
+#. Author URI of the plugin
+#: modular-ai.php
+msgid "https://alingsas.se"
+msgstr "https://alingsas.se"
