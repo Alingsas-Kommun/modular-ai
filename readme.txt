@@ -132,6 +132,10 @@ Yes, the plugin is fully translation-ready with support for WordPress i18n/l10n.
 = 1.0.0 =
 Initial release of Modular AI.
 
+== Development ==
+
+For development instructions and advanced usage, please visit the [plugin repository](https://github.com/Alingsas-Kommun/modular-ai).
+
 == Additional Information ==
 
 = Support =
