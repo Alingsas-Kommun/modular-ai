@@ -114,22 +114,30 @@ if ($cleanup) {
 /**
  * Detect if script is running from a Composer installation
  * 
+ * Checks for:
+ * - vendor/ directory (standard Composer)
+ * - plugins/ directory (WordPress plugin installation)
+ * - Absence of .git directory (indicates installed package, not dev repo)
+ * 
  * @return bool True if installed via Composer
  */
 function isComposerInstall(): bool
 {
     $scriptPath = __DIR__;
+    $realPath = realpath($scriptPath);
     
-    // Check if path contains 'vendor/' which indicates Composer installation
+    // Check if path contains 'vendor/' which indicates standard Composer installation
     if (strpos($scriptPath, '/vendor/') !== false || strpos($scriptPath, '\\vendor\\') !== false) {
         return true;
     }
     
-    // Check for Composer environment variables
-    if (getenv('COMPOSER') !== false || getenv('COMPOSER_ROOT_VERSION') !== false) {
-        // Additional check: verify we're actually in a vendor directory
-        $realPath = realpath($scriptPath);
-        if ($realPath && (strpos($realPath, '/vendor/') !== false || strpos($realPath, '\\vendor\\') !== false)) {
+    // Check if path contains 'plugins/' which indicates WordPress plugin installation
+    if (strpos($scriptPath, '/plugins/') !== false || strpos($scriptPath, '\\plugins\\') !== false ||
+        ($realPath && (strpos($realPath, '/plugins/') !== false || strpos($realPath, '\\plugins\\') !== false))) {
+        
+        // Additional check: if .git exists, it's likely the dev repo, not an install
+        $gitPath = __DIR__ . '/.git';
+        if (!is_dir($gitPath) && !file_exists($gitPath)) {
             return true;
         }
     }
