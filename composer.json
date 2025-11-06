@@ -15,5 +15,14 @@
         "files": [
             "helpers.php"
         ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@build-assets"
+        ],
+        "post-update-cmd": [
+            "@build-assets"
+        ],
+        "build-assets": "php build.php"
     }
 }
