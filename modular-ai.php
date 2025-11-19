@@ -20,64 +20,18 @@ use ModularAI\Providers\ApiServiceProvider;
 
 // Check if the plugin is loaded correctly
 if (!defined('ABSPATH')) {
-    exit;
+    throw new \Exception('Modular AI can only be loaded within the context of WordPress (ABSPATH not defined).');
 }
 
 // Check if the plugin is loaded correctly
 if (!function_exists('add_action')) {
-    exit;
+    throw new \Exception('Modular AI can only be loaded within the context of WordPress (add_action function not found).');
 }
 
 // Load the autoloader
-// Best practice for dual distribution (WordPress.org + Composer):
-// - WordPress.org: Use plugin's own vendor/ directory (included in ZIP)
-// - Composer: Use parent project's vendor/ directory (dependencies managed by Composer)
-//
-// Note: When installed via Composer with composer/installers, the plugin is installed
-// in the WordPress plugins directory (e.g., web/app/plugins/modular-ai/), not in vendor/.
-// We detect this by checking if the plugin's own vendor/ directory exists.
-
-$pluginAutoloader = __DIR__ . '/vendor/autoload.php';
-
-if (file_exists($pluginAutoloader)) {
-    // Standard distribution: Use plugin's own vendor directory
-    $autoloader = $pluginAutoloader;
-} else {
-    // Composer installation: Use parent project's vendor directory
-    // Walk up the directory tree to find the project root's vendor/autoload.php
-    $currentDir = realpath(__DIR__);
-    $maxDepth = 10; // Prevent infinite loops
-    $depth = 0;
-    $autoloader = null;
-    
-    while ($depth < $maxDepth && $currentDir !== false) {
-        $parentDir = dirname($currentDir);
-        
-        // Stop if we've reached the filesystem root
-        if ($parentDir === $currentDir) {
-            break;
-        }
-        
-        $vendorAutoloader = $parentDir . '/vendor/autoload.php';
-        if (file_exists($vendorAutoloader)) {
-            $autoloader = $vendorAutoloader;
-            break;
-        }
-        
-        $currentDir = $parentDir;
-        $depth++;
-    }
-    
-    if (!$autoloader || !file_exists($autoloader)) {
-        wp_die(
-            'Modular AI: Could not find Composer autoloader. ' .
-            'If installed via Composer, ensure dependencies are installed. ' .
-            'If installed manually, run "composer install" in the plugin directory.'
-        );
-    }
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
 }
-
-require_once $autoloader;
 
 // Load the textdomain
 add_action('init', function() {
