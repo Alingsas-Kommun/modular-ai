@@ -11,28 +11,30 @@ use ModularAI\Utilities\Container;
  * @param mixed $default Default value if key not found
  * @return mixed
  */
-function config(string $key, $default = null)
-{
-    static $configs = [];
+if (!function_exists(__NAMESPACE__ . '\\config')) {
+    function config(string $key, $default = null)
+    {
+        static $configs = [];
 
-    $parts = explode('.', $key, 2);
-    $file = $parts[0];
-    $item = $parts[1] ?? null;
-    $configPath = __DIR__ . "/config/{$file}.php";
+        $parts = explode('.', $key, 2);
+        $file = $parts[0];
+        $item = $parts[1] ?? null;
+        $configPath = __DIR__ . "/config/{$file}.php";
 
-    if (!isset($configs[$file])) {
-        if (file_exists($configPath)) {
-            $configs[$file] = require $configPath;
-        } else {
-            $configs[$file] = [];
+        if (!isset($configs[$file])) {
+            if (file_exists($configPath)) {
+                $configs[$file] = require $configPath;
+            } else {
+                $configs[$file] = [];
+            }
         }
-    }
 
-    if ($item === null) {
-        return $configs[$file];
+        if ($item === null) {
+            return $configs[$file];
+        }
+        
+        return $configs[$file][$item] ?? $default;
     }
-    
-    return $configs[$file][$item] ?? $default;
 }
 
 /**
@@ -41,9 +43,11 @@ function config(string $key, $default = null)
  * @param string $class Class name to resolve
  * @return mixed
  */
-function di(string $class)
-{
-    return Container::get($class);
+if (!function_exists(__NAMESPACE__ . '\\di')) {
+    function di(string $class)
+    {
+        return Container::get($class);
+    }
 }
 
 /**
@@ -51,16 +55,18 @@ function di(string $class)
  *
  * @return string
  */
-function get_plugin_version(): string
-{
-    static $version = null;
-    
-    if ($version === null) {
-        $plugin_data = \get_plugin_data(config('paths.plugin_path') . 'modular-ai.php');
-        $version = $plugin_data['Version'];
+if (!function_exists(__NAMESPACE__ . '\\get_plugin_version')) {
+    function get_plugin_version(): string
+    {
+        static $version = null;
+        
+        if ($version === null) {
+            $plugin_data = \get_plugin_data(config('paths.plugin_path') . 'modular-ai.php');
+            $version = $plugin_data['Version'];
+        }
+        
+        return $version;
     }
-    
-    return $version;
 }
 
 /**
@@ -70,9 +76,11 @@ function get_plugin_version(): string
  * @param mixed $default Default value if setting not found
  * @return mixed
  */
-function getSetting(string $key, $default = null)
-{
-    return \get_option('_mai_' . $key, $default);
+if (!function_exists(__NAMESPACE__ . '\\getSetting')) {
+    function getSetting(string $key, $default = null)
+    {
+        return \get_option('_mai_' . $key, $default);
+    }
 }
 
 /**
@@ -82,7 +90,9 @@ function getSetting(string $key, $default = null)
  * @param mixed $value Value to update
  * @return bool
  */
-function updateSetting(string $key, $value): bool
-{
-    return \update_option('_mai_' . $key, $value);
+if (!function_exists(__NAMESPACE__ . '\\updateSetting')) {
+    function updateSetting(string $key, $value): bool
+    {
+        return \update_option('_mai_' . $key, $value);
+    }
 }
